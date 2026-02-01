@@ -17,6 +17,13 @@ app.innerHTML = `
         </a>
         <a class="btn ghost" href="mailto:hello@kaelem.dev">Request a new preview</a>
       </div>
+
+      <article class="card">
+        <div class="meta">Preview</div>
+        <h2>Assistant Task Schedule</h2>
+        <p>Apple-inspired daily planner UI.</p>
+        <a class="card-link" href="/ui-previews/previews/assistant-task-schedule/index.html">Open</a>
+      </article>
     </section>
 
     <section class="grid">
@@ -25,6 +32,13 @@ app.innerHTML = `
         <h2>Starter Preview</h2>
         <p>Replace this card with your first generated preview.</p>
         <a class="card-link" href="#">Coming soon</a>
+      </article>
+
+      <article class="card">
+        <div class="meta">Preview</div>
+        <h2>Assistant Task Schedule</h2>
+        <p>Apple-inspired daily planner UI.</p>
+        <a class="card-link" href="/ui-previews/previews/assistant-task-schedule/index.html">Open</a>
       </article>
     </section>
   </main>
