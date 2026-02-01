@@ -24,6 +24,13 @@ app.innerHTML = `
         <p>Apple-inspired daily planner UI.</p>
         <a class="card-link" href="/ui-previews/previews/assistant-task-schedule/index.html">Open</a>
       </article>
+
+      <article class="card">
+        <div class="meta">Whitebox</div>
+        <h2>Assistant Notes</h2>
+        <p>Non-sensitive tasks and updates.</p>
+        <a class="card-link" href="/ui-previews/previews/assistant-notes/index.html">Open</a>
+      </article>
     </section>
 
     <section class="grid">
@@ -39,6 +46,13 @@ app.innerHTML = `
         <h2>Assistant Task Schedule</h2>
         <p>Apple-inspired daily planner UI.</p>
         <a class="card-link" href="/ui-previews/previews/assistant-task-schedule/index.html">Open</a>
+      </article>
+
+      <article class="card">
+        <div class="meta">Whitebox</div>
+        <h2>Assistant Notes</h2>
+        <p>Non-sensitive tasks and updates.</p>
+        <a class="card-link" href="/ui-previews/previews/assistant-notes/index.html">Open</a>
       </article>
     </section>
   </main>
