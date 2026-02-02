@@ -81,7 +81,7 @@
       color: var(--muted);
     }
     .delta strong {
-      color: var(--positive) if change_24h and change_24h >= 0 else var(--negative);
+      color: var(--positive) if change_24h >= 0 else var(--negative);
     }
     .section {
       background: rgba(15,20,32,0.9);
@@ -125,24 +125,24 @@
     <div class="hero">
       <div class="eyebrow">BTC DAILY REPORT</div>
       <h1>Bitcoin Daily Snapshot</h1>
-      <div class="meta">Generated 2026-02-02 21:22 GMT+8 · Data source: CoinGecko · 24h rolling window</div>
+      <div class="meta">Generated 2026-02-02 21:25 GMT+8 · Data source: Binance 24h ticker · 24h rolling window</div>
     </div>
 
     <div class="grid">
       <div class="card">
-        <h3>Spot Price (USD)</h3>
-        <div class="value">$77,831</div>
-        <div class="delta">24h change: <strong>-1.00%</strong></div>
+        <h3>Spot Price (USDT)</h3>
+        <div class="value">$77,996</div>
+        <div class="delta">24h change: <strong>-0.81%</strong></div>
       </div>
       <div class="card">
         <h3>24h Range</h3>
-        <div class="value">$74,592 → $78,622</div>
+        <div class="value">$74,604 → $78,699</div>
         <div class="delta">Volatility signal: <strong>moderate</strong></div>
       </div>
       <div class="card">
-        <h3>24h Volume</h3>
-        <div class="value">$85.80B</div>
-        <div class="delta">Market cap: $1.55T</div>
+        <h3>24h Quote Volume</h3>
+        <div class="value">$3.33B</div>
+        <div class="delta">USDT volume</div>
       </div>
       <div class="card">
         <h3>Momentum</h3>
@@ -155,8 +155,8 @@
       <span class="badge">TODAY'S READ</span>
       <h2>Quick Analysis</h2>
       <div class="bullets">
-        <div>Price moved 1.00% in the last 24h, with the market printing a $74,592 → $78,622 range.</div>
-        <div>Volume is $85.80B, indicating elevated trading activity.</div>
+        <div>Price moved 0.81% in the last 24h, with the market printing a $74,604 → $78,699 range.</div>
+        <div>Quote volume is $3.33B USDT, indicating normal trading activity.</div>
         <div>Momentum bias is negative — monitor for follow-through or mean reversion.</div>
       </div>
     </div>
@@ -170,7 +170,7 @@
       </div>
     </div>
 
-    <div class="footnote">Last updated: 2026-02-02T13:21:17.417Z. This is a snapshot, not financial advice.</div>
+    <div class="footnote">Last updated: 2026-02-02 13:25 UTC. This is a snapshot, not financial advice.</div>
   </div>
 </body>
 </html>
