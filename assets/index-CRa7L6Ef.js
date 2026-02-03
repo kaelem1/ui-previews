@@ -31,10 +31,10 @@
 
     <section class="grid">
       <article class="card">
-        <div class="meta">Example</div>
-        <h2>Starter Preview</h2>
-        <p>Replace this card with your first generated preview.</p>
-        <a class="card-link" href="#">Coming soon</a>
+        <div class="meta">Preview</div>
+        <h2>Clawdbot Memory System</h2>
+        <p>NotebookLM-style summary UI for memory breakdown.</p>
+        <a class="card-link" href="/ui-previews/previews/clawdbot-memory/index.html">Open</a>
       </article>
 
       <article class="card">
