@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clawdbot Memory System — UI Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0f1218;
+        --bg-2: #141a24;
+        --ink: #f5f2ea;
+        --muted: #b7b2a6;
+        --accent: #d4ff5a;
+        --accent-2: #4fd1c5;
+        --card: rgba(255, 255, 255, 0.05);
+        --stroke: rgba(255, 255, 255, 0.1);
+        --glow: rgba(212, 255, 90, 0.25);
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at top, #1f2532 0%, #0b0d12 55%, #07090d 100%);
+        min-height: 100vh;
+      }
+
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 64px 24px 88px;
+        position: relative;
+      }
+
+      .glow {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 10% 20%, rgba(79, 209, 197, 0.2), transparent 40%),
+          radial-gradient(circle at 85% 10%, rgba(212, 255, 90, 0.25), transparent 35%);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      header {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 18px;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.26em;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      h1 {
+        font-family: "Fraunces", serif;
+        font-size: clamp(32px, 6vw, 56px);
+        line-height: 1.05;
+        margin: 0;
+      }
+
+      .lead {
+        max-width: 620px;
+        font-size: 18px;
+        color: var(--muted);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .badge-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .badge {
+        border: 1px solid var(--stroke);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--ink);
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 13px;
+      }
+
+      .grid {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(8px);
+      }
+
+      .card h3 {
+        margin: 0 0 12px;
+        font-size: 18px;
+      }
+
+      .card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .card li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 12px var(--glow);
+        margin-top: 6px;
+        flex-shrink: 0;
+      }
+
+      .accent {
+        color: var(--accent);
+      }
+
+      .cta {
+        margin-top: 34px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .btn {
+        padding: 12px 18px;
+        border-radius: 10px;
+        border: 1px solid var(--stroke);
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .btn.primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #0c0f14;
+        border: none;
+        box-shadow: 0 10px 30px rgba(79, 209, 197, 0.35);
+      }
+
+      .footer {
+        margin-top: 56px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          padding-top: 48px;
+        }
+
+        .card {
+          padding: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="glow"></div>
+      <header>
+        <div class="eyebrow">Memory System</div>
+        <h1>Clawdbot 记忆系统拆解</h1>
+        <p class="lead">
+          通过本地 Markdown + 向量检索的组合，让 AI 在对话中“记得住、找得到、用得上”。
+        </p>
+        <div class="badge-row">
+          <span class="badge">本地持久化</span>
+          <span class="badge">MemorySearch + BM25</span>
+          <span class="badge">NotebookLM 风格总结</span>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Summary</h3>
+          <ul>
+            <li><span class="dot"></span>记忆以 <span class="accent">Markdown</span> 文件落在工作区，分日记与长期记忆。</li>
+            <li><span class="dot"></span>对话收尾触发总结写入，形成可检索的时间线。</li>
+            <li><span class="dot"></span>MemorySearch 负责检索，拼接进上下文。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Key Evidence</h3>
+          <ul>
+            <li><span class="dot"></span>启用索引后，检索不再逐文件扫描。</li>
+            <li><span class="dot"></span>索引构建有防抖阈值，避免频繁重建。</li>
+            <li><span class="dot"></span>混合检索：向量相似度 + BM25。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Takeaways</h3>
+          <ul>
+            <li><span class="dot"></span>记忆系统核心是 <span class="accent">索引与召回</span>。</li>
+            <li><span class="dot"></span>要“记得住”，需开启自动总结与长期记忆。</li>
+            <li><span class="dot"></span>要“找得到”，必须启用向量检索。</li>
+          </ul>
+        </article>
+      </section>
+
+      <div class="cta">
+        <a class="btn primary" href="#">查看原始转写</a>
+        <a class="btn" href="#">查看完整笔记</a>
+      </div>
+
+      <div class="footer">UI Preview · Generated for review</div>
+    </div>
+  </body>
+</html>
