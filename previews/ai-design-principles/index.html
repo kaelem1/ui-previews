@@ -80,10 +80,12 @@
         border-radius: 18px;
         padding: 22px;
         box-shadow: var(--shadow);
+        display: grid;
+        gap: 12px;
       }
 
       .card h3 {
-        margin: 0 0 12px;
+        margin: 0;
         font-family: "Unbounded", sans-serif;
         font-size: 18px;
       }
@@ -97,7 +99,22 @@
         border-radius: 999px;
         background: rgba(43, 89, 255, 0.1);
         color: var(--accent-2);
-        margin-bottom: 10px;
+      }
+
+      .icon-wrap {
+        display: grid;
+        gap: 6px;
+        justify-items: start;
+      }
+
+      .icon {
+        width: 64px;
+        height: 64px;
+      }
+
+      .caption {
+        font-size: 12px;
+        color: var(--muted);
       }
 
       .card p {
@@ -131,6 +148,15 @@
       <section class="grid">
         <article class="card">
           <div class="tag">原理 1</div>
+          <div class="icon-wrap">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="8" y="10" width="48" height="34" rx="6" fill="#ffe9e2" stroke="#ff6b4a" stroke-width="2" />
+              <rect x="14" y="18" width="14" height="6" rx="3" fill="#ff6b4a" />
+              <rect x="14" y="28" width="26" height="6" rx="3" fill="#2b59ff" opacity="0.8" />
+              <rect x="14" y="38" width="18" height="6" rx="3" fill="#2b59ff" opacity="0.5" />
+            </svg>
+            <div class="caption">组件 + 规范输入</div>
+          </div>
           <h3>让 AI 先“懂业务组件”</h3>
           <p>
             把组件库和设计规范提前喂给 AI（字段、用法、Token）。这样 AI 才知道“该用什么、长什么样”。
@@ -139,6 +165,14 @@
 
         <article class="card">
           <div class="tag">原理 2</div>
+          <div class="icon-wrap">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="24" cy="26" r="12" fill="#e8f1ff" stroke="#2b59ff" stroke-width="2" />
+              <circle cx="42" cy="38" r="10" fill="#ffe9e2" stroke="#ff6b4a" stroke-width="2" />
+              <path d="M20 42c6 6 18 6 24 0" fill="none" stroke="#141414" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <div class="caption">澄清问题</div>
+          </div>
           <h3>先澄清，再生成</h3>
           <p>
             AI 不急着出图，而是先追问目标、优先级、重点板块。把隐性思考变成显性策略。
@@ -147,6 +181,14 @@
 
         <article class="card">
           <div class="tag">原理 3</div>
+          <div class="icon-wrap">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="10" y="12" width="18" height="30" rx="4" fill="#e8f1ff" stroke="#2b59ff" stroke-width="2" />
+              <rect x="30" y="18" width="18" height="30" rx="4" fill="#ffe9e2" stroke="#ff6b4a" stroke-width="2" />
+              <rect x="20" y="26" width="18" height="30" rx="4" fill="#fff6db" stroke="#f4b400" stroke-width="2" />
+            </svg>
+            <div class="caption">多稿发散</div>
+          </div>
           <h3>多稿发散，每稿有主张</h3>
           <p>
             每版在生成前都有不同的布局/交互策略，所以方案可比较、可解释，而不是随机好看。
@@ -155,6 +197,15 @@
 
         <article class="card">
           <div class="tag">原理 4</div>
+          <div class="icon-wrap">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="12" y="10" width="40" height="44" rx="8" fill="#ffffff" stroke="#141414" stroke-width="2" />
+              <rect x="20" y="20" width="24" height="6" rx="3" fill="#2b59ff" />
+              <rect x="20" y="32" width="20" height="6" rx="3" fill="#ff6b4a" />
+              <rect x="20" y="44" width="16" height="6" rx="3" fill="#2b59ff" opacity="0.6" />
+            </svg>
+            <div class="caption">可编辑输出</div>
+          </div>
           <h3>可落地的输出</h3>
           <p>
             输出不是图片，而是结构化设计稿（分组、文字、间距、颜色都保留），方便继续精修。
