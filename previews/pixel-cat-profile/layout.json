@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "title": "Pixel Cat Profile",
+    "description": "Pixel-art style cat profile page",
+    "pageType": "report",
+    "role": "report",
+    "intent": "summarize",
+    "tone": "clear"
+  },
+  "layout": [
+    {
+      "type": "hero",
+      "title": "Pixel Cat Profile",
+      "subtitle": "Pixel-art style cat profile page",
+      "role": "context",
+      "intent": "frame",
+      "styleHint": "airy",
+      "blocks": [
+        {
+          "kind": "card",
+          "title": "核心观点",
+          "desc": "用一句话概括报告价值。",
+          "role": "primary",
+          "intent": "explain"
+        }
+      ]
+    },
+    {
+      "type": "grid",
+      "title": "关键发现",
+      "role": "insight",
+      "intent": "highlight",
+      "blocks": [
+        {
+          "kind": "card",
+          "title": "发现 1",
+          "desc": "关键结论或观察。",
+          "role": "primary",
+          "intent": "explain"
+        },
+        {
+          "kind": "card",
+          "title": "发现 2",
+          "desc": "关键结论或观察。",
+          "role": "primary",
+          "intent": "explain"
+        },
+        {
+          "kind": "card",
+          "title": "发现 3",
+          "desc": "关键结论或观察。",
+          "role": "primary",
+          "intent": "explain"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "下一步",
+      "role": "action",
+      "intent": "prompt",
+      "blocks": [
+        {
+          "kind": "card",
+          "title": "继续分析",
+          "desc": "补充更细的数据或案例。",
+          "role": "callout",
+          "intent": "prompt"
+        }
+      ]
+    },
+    {
+      "type": "stats",
+      "title": "pixel art cat profile 关键指标",
+      "role": "insight",
+      "intent": "highlight",
+      "blocks": [
+        {
+          "kind": "metric",
+          "title": "采用趋势",
+          "desc": "上升中",
+          "role": "primary",
+          "intent": "explain"
+        },
+        {
+          "kind": "metric",
+          "title": "能力成熟度",
+          "desc": "中等偏高",
+          "role": "primary",
+          "intent": "explain"
+        },
+        {
+          "kind": "metric",
+          "title": "落地门槛",
+          "desc": "中等",
+          "role": "primary",
+          "intent": "explain"
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "title": "pixel art cat profile 能力对照",
+      "role": "insight",
+      "intent": "highlight",
+      "blocks": [
+        {
+          "kind": "card",
+          "title": "自动剪辑",
+          "desc": "省时提效，适配批量生产",
+          "role": "primary",
+          "intent": "explain"
+        },
+        {
+          "kind": "card",
+          "title": "文本驱动",
+          "desc": "更适合播客/访谈类内容",
+          "role": "primary",
+          "intent": "explain"
+        },
+        {
+          "kind": "card",
+          "title": "生成式补镜头",
+          "desc": "补充素材与风格统一",
+          "role": "primary",
+          "intent": "explain"
+        }
+      ]
+    }
+  ]
+}
