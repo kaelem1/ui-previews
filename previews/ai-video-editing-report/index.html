@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 剪辑软件与功能调研（2026）</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0f1116;
+        --panel: #171b26;
+        --panel-2: #1f2433;
+        --ink: #f4f6fb;
+        --muted: #b6bccb;
+        --accent: #5eead4;
+        --accent-2: #ff9f1c;
+        --accent-3: #7c9cff;
+        --stroke: rgba(255, 255, 255, 0.08);
+        --shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at 15% 10%, rgba(124, 156, 255, 0.15), transparent 40%),
+          radial-gradient(circle at 80% 0%, rgba(94, 234, 212, 0.16), transparent 45%),
+          var(--bg);
+        color: var(--ink);
+      }
+
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 64px 24px 88px;
+      }
+
+      header {
+        display: grid;
+        gap: 16px;
+        max-width: 860px;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        font-size: 12px;
+        color: var(--accent);
+      }
+
+      h1 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: clamp(32px, 6vw, 58px);
+        margin: 0;
+      }
+
+      .lead {
+        font-size: 18px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .section {
+        margin-top: 40px;
+      }
+
+      .section h2 {
+        font-size: 20px;
+        margin: 0 0 16px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--stroke);
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 12px;
+      }
+
+      .card h3 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        font-size: 12px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(124, 156, 255, 0.16);
+        color: var(--accent-3);
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .link {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 13px;
+      }
+
+      .table {
+        margin-top: 18px;
+        border: 1px solid var(--stroke);
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 1.2fr 2.2fr 1fr;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--stroke);
+        background: var(--panel-2);
+      }
+
+      .row.header {
+        background: rgba(94, 234, 212, 0.08);
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .row:last-child { border-bottom: none; }
+
+      .muted { color: var(--muted); }
+
+      .note {
+        margin-top: 18px;
+        padding: 14px 16px;
+        border-radius: 14px;
+        background: rgba(255, 159, 28, 0.12);
+        color: #ffd5a6;
+        border: 1px dashed rgba(255, 159, 28, 0.4);
+      }
+
+      @media (max-width: 760px) {
+        .row {
+          grid-template-columns: 1fr;
+          gap: 6px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="eyebrow">AI Video Editing Report</div>
+        <h1>AI 剪辑软件与功能调研（简明版）</h1>
+        <div class="lead">
+          重点覆盖：文本驱动剪辑、智能字幕/翻译、智能重构画面、自动生成短视频、AI 增强音画。
+          以下功能来自公开官网描述（附链接）。
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>一、功能分层（非技术视角）</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>文本化剪辑</h3>
+            <p>通过文字稿编辑视频，支持搜索与删除口癖、字幕生成。</p>
+            <div class="tags">
+              <span class="tag">转写/字幕</span>
+              <span class="tag">查找/替换</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>自动结构化</h3>
+            <p>自动生成时间线、摘要、亮点片段或短视频版本。</p>
+            <div class="tags">
+              <span class="tag">自动剪辑</span>
+              <span class="tag">短视频</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>智能画面处理</h3>
+            <p>自动改画幅、追踪主体、自动构图与视觉搜索。</p>
+            <div class="tags">
+              <span class="tag">重构画面</span>
+              <span class="tag">智能搜索</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>AI 生成</h3>
+            <p>基于文本/图片生成视频或 B-roll，用于补充素材。</p>
+            <div class="tags">
+              <span class="tag">生成式视频</span>
+              <span class="tag">B-roll</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>二、主流工具与代表功能（来自官网）</h2>
+        <div class="table">
+          <div class="row header">
+            <div>产品</div>
+            <div>代表 AI 功能</div>
+            <div>来源</div>
+          </div>
+          <div class="row">
+            <div>Descript</div>
+            <div class="muted">文本化剪辑、自动去口癖、Studio Sound、AI 绿幕、字幕、翻译、AI 生成视频/配镜头</div>
+            <div><a class="link" href="https://www.descript.com/" target="_blank" rel="noreferrer">descript.com</a></div>
+          </div>
+          <div class="row">
+            <div>CapCut</div>
+            <div class="muted">AI 视频生成、AI 字幕/双语字幕、去口癖、AI 图像/视频工具等</div>
+            <div><a class="link" href="https://www.capcut.com/" target="_blank" rel="noreferrer">capcut.com</a></div>
+          </div>
+          <div class="row">
+            <div>VEED</div>
+            <div class="muted">AI 眼神校正、翻译、文本生成视频、AI 数字人</div>
+            <div><a class="link" href="https://www.veed.io/" target="_blank" rel="noreferrer">veed.io</a></div>
+          </div>
+          <div class="row">
+            <div>DaVinci Resolve</div>
+            <div class="muted">AI IntelliScript（脚本到时间线）、AI 动画字幕、AI 多机位智能切换</div>
+            <div><a class="link" href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noreferrer">blackmagicdesign.com</a></div>
+          </div>
+          <div class="row">
+            <div>Final Cut Pro</div>
+            <div class="muted">Visual Search（画面搜索）、Transcript Search（语音检索）、Montage Maker（自动卡点剪辑）</div>
+            <div><a class="link" href="https://www.apple.com/final-cut-pro/" target="_blank" rel="noreferrer">apple.com</a></div>
+          </div>
+          <div class="row">
+            <div>OpusClip</div>
+            <div class="muted">ClipAnything 自动剪片、ReframeAnything 自动改画幅+主体追踪、批量短视频</div>
+            <div><a class="link" href="https://www.opus.pro/" target="_blank" rel="noreferrer">opus.pro</a></div>
+          </div>
+          <div class="row">
+            <div>Kapwing</div>
+            <div class="muted">从文本生成初稿，自动生成多层结构、配音/时序</div>
+            <div><a class="link" href="https://www.kapwing.com/" target="_blank" rel="noreferrer">kapwing.com</a></div>
+          </div>
+          <div class="row">
+            <div>Runway</div>
+            <div class="muted">Gen 系列视频生成模型（强调高保真/可控生成）</div>
+            <div><a class="link" href="https://runwayml.com/" target="_blank" rel="noreferrer">runwayml.com</a></div>
+          </div>
+          <div class="row">
+            <div>Pika</div>
+            <div class="muted">文本/音频驱动的生成式视频能力（强调表现力）</div>
+            <div><a class="link" href="https://pika.art/" target="_blank" rel="noreferrer">pika.art</a></div>
+          </div>
+          <div class="row">
+            <div>Filmora</div>
+            <div class="muted">动态字幕、语音增强、图表动画等创作工具（含 AI 辅助）</div>
+            <div><a class="link" href="https://filmora.wondershare.com/" target="_blank" rel="noreferrer">filmora.wondershare.com</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>三、典型场景与工具建议</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>视频播客/访谈</h3>
+            <p>Descript（文本化剪辑 + Studio Sound）+ OpusClip（自动切短视频）。</p>
+          </article>
+          <article class="card">
+            <h3>短视频矩阵</h3>
+            <p>CapCut / OpusClip（自动字幕 + 自动改画幅 + 批量导出）。</p>
+          </article>
+          <article class="card">
+            <h3>营销与培训</h3>
+            <p>VEED / Kapwing（模板化生成 + 团队协作 + AI 头像）。</p>
+          </article>
+          <article class="card">
+            <h3>高质量调色与后期</h3>
+            <p>DaVinci Resolve（调色 + AI 辅助剪辑 + 多机位）。</p>
+          </article>
+        </div>
+        <div class="note">注：本报告基于公开官网信息汇总，功能会随版本更新。</div>
+      </section>
+    </div>
+  </body>
+</html>
