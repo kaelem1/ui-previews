@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>猫猫档案</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f7f1e7;
+        --ink: #1e1b16;
+        --muted: #635b52;
+        --accent: #ff7a5c;
+        --accent-2: #2b6cb0;
+        --card: #fffaf3;
+        --stroke: rgba(30, 27, 22, 0.12);
+        --shadow: 0 22px 45px rgba(30, 27, 22, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at 12% 8%, rgba(255, 122, 92, 0.2), transparent 35%),
+          radial-gradient(circle at 88% 12%, rgba(43, 108, 176, 0.15), transparent 35%),
+          var(--bg);
+        color: var(--ink);
+      }
+
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 56px 24px 88px;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 28px;
+        align-items: center;
+      }
+
+      .hero-card {
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        border-radius: 26px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 16px;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.32em;
+        font-size: 12px;
+        color: var(--accent-2);
+      }
+
+      h1 {
+        font-family: "Fraunces", serif;
+        font-size: clamp(32px, 5vw, 54px);
+        margin: 0;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 12px;
+      }
+
+      .stat {
+        background: #fff;
+        border: 1px dashed var(--stroke);
+        border-radius: 16px;
+        padding: 12px;
+        text-align: center;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .portrait {
+        position: relative;
+        border-radius: 28px;
+        overflow: hidden;
+        border: 1px solid var(--stroke);
+        box-shadow: var(--shadow);
+      }
+
+      .portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .badge {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        padding: 8px 14px;
+        background: rgba(30, 27, 22, 0.78);
+        color: #fff;
+        border-radius: 999px;
+        font-size: 12px;
+      }
+
+      .section {
+        margin-top: 40px;
+      }
+
+      .section h2 {
+        font-size: 20px;
+        margin: 0 0 16px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        border-radius: 20px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 10px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: rgba(255, 122, 92, 0.15);
+        color: var(--accent);
+        width: fit-content;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 12px;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 12px;
+        align-items: start;
+      }
+
+      .time {
+        font-weight: 600;
+        color: var(--accent-2);
+      }
+
+      @media (max-width: 640px) {
+        .row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="hero-card">
+          <div class="eyebrow">Cat Profile</div>
+          <h1>这只猫猫的专属网页</h1>
+          <div class="lead">
+            一眼心动的主角，拥有自己的气质、节奏和小宇宙。
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <strong>气质</strong>
+              温柔但有主见
+            </div>
+            <div class="stat">
+              <strong>今日心情</strong>
+              好奇观察中
+            </div>
+            <div class="stat">
+              <strong>偏好</strong>
+              靠近但不黏
+            </div>
+          </div>
+        </div>
+        <div class="portrait">
+          <img src="cat.jpg" alt="cat" />
+          <div class="badge">独家写真</div>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>个性标签</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="pill">特点</div>
+            <strong>安静型探索者</strong>
+            <div class="lead">不会闹，但眼神里充满研究和判断。</div>
+          </article>
+          <article class="card">
+            <div class="pill">技能</div>
+            <strong>气场锁定</strong>
+            <div class="lead">一抬头就抓住人的注意力。</div>
+          </article>
+          <article class="card">
+            <div class="pill">魅力</div>
+            <strong>高级感毛色</strong>
+            <div class="lead">不用说话就很有存在感。</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>猫猫日程表</h2>
+        <div class="card">
+          <div class="timeline">
+            <div class="row">
+              <div class="time">08:00</div>
+              <div class="lead">巡视地盘，确认今天的安全等级。</div>
+            </div>
+            <div class="row">
+              <div class="time">13:00</div>
+              <div class="lead">窗边放空，顺便监控路过的小鸟。</div>
+            </div>
+            <div class="row">
+              <div class="time">19:00</div>
+              <div class="lead">短时社交，给人一点存在感回馈。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
