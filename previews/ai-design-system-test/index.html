@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Design System Test Preview</title>
+    <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=Archivo:wght@300;400;500;600;700|Space+Grotesk:wght@300;400;500;600;700" />
+    <style>
+      :root {
+        --primary: #4F46E5;
+        --secondary: #6366F1;
+        --cta: #F97316;
+        --bg: #EEF2FF;
+        --text: #312E81;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.12), transparent 45%),
+          radial-gradient(circle at 85% 10%, rgba(99, 102, 241, 0.18), transparent 40%),
+          var(--bg);
+        color: var(--text);
+      }
+
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 64px 24px 88px;
+      }
+
+      header {
+        display: grid;
+        gap: 16px;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        font-size: 12px;
+        color: var(--secondary);
+      }
+
+      h1 {
+        font-family: "Archivo", system-ui, sans-serif;
+        font-size: clamp(32px, 6vw, 56px);
+        margin: 0;
+      }
+
+      .lead {
+        max-width: 640px;
+        line-height: 1.6;
+        font-size: 18px;
+      }
+
+      .grid {
+        margin-top: 36px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 18px;
+        padding: 20px;
+        box-shadow: 0 18px 40px rgba(25, 24, 22, 0.12);
+        display: grid;
+        gap: 10px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: rgba(79, 70, 229, 0.12);
+        color: var(--primary);
+        width: fit-content;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border-radius: 12px;
+        background: var(--cta);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        width: fit-content;
+        margin-top: 18px;
+      }
+
+      .muted {
+        color: rgba(0, 0, 0, 0.65);
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="eyebrow">Design System</div>
+        <h1>AI Design System Test</h1>
+        <div class="lead">Generate a design system powered by UI/UX Pro Max</div>
+        <a class="cta" href="#">Primary Action</a>
+      </header>
+
+      <section class="grid">
+        <article class="card">
+          <div class="pill">Pattern</div>
+          <strong>Interactive Demo + Feature-Rich</strong>
+          <div class="muted">Sections: Hero > Features > CTA</div>
+        </article>
+        <article class="card">
+          <div class="pill">Style</div>
+          <strong>Interactive Demo + Feature-Rich</strong>
+          <div class="muted">2D, minimalist, bold colors, no shadows, clean lines, simple shapes, typography-focused, modern, icon-heavy</div>
+        </article>
+        <article class="card">
+          <div class="pill">Key Effects</div>
+          <div class="muted">No gradients/shadows, simple hover (color/opacity shift), fast loading, clean transitions (150-200ms ease), minimal icons</div>
+        </article>
+        <article class="card">
+          <div class="pill">Avoid</div>
+          <div class="muted">- Complex onboarding
+- Slow performance</div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>
