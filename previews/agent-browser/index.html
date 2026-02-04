@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Browser — UI Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0d1117;
+        --ink: #f6f7fb;
+        --muted: #b0b7c3;
+        --accent: #4ade80;
+        --accent-2: #38bdf8;
+        --card: #121826;
+        --stroke: #1f2937;
+        --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Work Sans", system-ui, -apple-system, sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 45%),
+          radial-gradient(circle at 90% 10%, rgba(74, 222, 128, 0.2), transparent 40%),
+          var(--bg);
+        min-height: 100vh;
+      }
+
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 64px 24px 80px;
+      }
+
+      header {
+        display: grid;
+        gap: 16px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(32px, 6vw, 60px);
+        margin: 0;
+      }
+
+      .lead {
+        max-width: 640px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .pill {
+        border: 1px solid var(--stroke);
+        background: rgba(255, 255, 255, 0.05);
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 13px;
+      }
+
+      .grid {
+        margin-top: 36px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .card h3 {
+        margin: 0 0 12px;
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+        color: var(--muted);
+      }
+
+      .card li {
+        display: flex;
+        gap: 10px;
+        line-height: 1.6;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        margin-top: 6px;
+        flex-shrink: 0;
+      }
+
+      .cta {
+        margin-top: 32px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 12px 18px;
+        border-radius: 10px;
+        border: 1px solid var(--stroke);
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .btn.primary {
+        border: none;
+        color: #03130a;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        box-shadow: 0 12px 32px rgba(56, 189, 248, 0.35);
+      }
+
+      .footer {
+        margin-top: 56px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          padding-top: 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="eyebrow">Agent Browser</div>
+        <h1>更省 Token 的浏览器自动化</h1>
+        <p class="lead">
+          通过把网页操作压缩成“可交互元素 + 短指令”，让模型专注完成任务而不是吞 DOM。
+        </p>
+        <div class="pill-row">
+          <span class="pill">Vercel 开源</span>
+          <span class="pill">元素级控制</span>
+          <span class="pill">低成本调用</span>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Summary</h3>
+          <ul>
+            <li><span class="dot"></span>传统自动化传输整页源码，浪费 token。</li>
+            <li><span class="dot"></span>Playwright 抽象交互元素，已大幅减负。</li>
+            <li><span class="dot"></span>Agent Browser 用短指令控制元素，进一步压缩输入。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Key Evidence</h3>
+          <ul>
+            <li><span class="dot"></span>元素列表替代 HTML/CSS/JS 细节。</li>
+            <li><span class="dot"></span>指令式操作（click E2）比代码驱动更轻量。</li>
+            <li><span class="dot"></span>更适合大模型“看得懂、用得上”。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Takeaways</h3>
+          <ul>
+            <li><span class="dot"></span>省 token 的关键是减少无关 DOM 噪音。</li>
+            <li><span class="dot"></span>自动化任务优先考虑 Agent Browser。</li>
+            <li><span class="dot"></span>复杂测试脚本仍可用 Playwright。</li>
+          </ul>
+        </article>
+      </section>
+
+      <div class="cta">
+        <a class="btn primary" href="#">查看笔记</a>
+        <a class="btn" href="#">查看转写</a>
+      </div>
+
+      <div class="footer">UI Preview · Generated for review</div>
+    </div>
+  </body>
+</html>
