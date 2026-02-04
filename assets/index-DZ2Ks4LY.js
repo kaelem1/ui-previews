@@ -32,6 +32,24 @@
     <section class="grid">
       <article class="card">
         <div class="meta">Preview</div>
+        <h2>AI Design Whiteboard</h2>
+        <p>Workshop-style sticky notes for the 4 principles.</p>
+        <a class="card-link" href="/ui-previews/previews/ai-design-whiteboard/index.html">Open</a>
+      </article>
+      <article class="card">
+        <div class="meta">Preview</div>
+        <h2>AI Design Flow</h2>
+        <p>Clean flowchart version of the 4-step logic.</p>
+        <a class="card-link" href="/ui-previews/previews/ai-design-flow/index.html">Open</a>
+      </article>
+      <article class="card">
+        <div class="meta">Preview</div>
+        <h2>AI Design Poster</h2>
+        <p>Poster-style layout with bold typographic blocks.</p>
+        <a class="card-link" href="/ui-previews/previews/ai-design-poster/index.html">Open</a>
+      </article>
+      <article class="card">
+        <div class="meta">Preview</div>
         <h2>AI Design Principles</h2>
         <p>4 key principles in an AI-assisted design workflow.</p>
         <a class="card-link" href="/ui-previews/previews/ai-design-principles/index.html">Open</a>

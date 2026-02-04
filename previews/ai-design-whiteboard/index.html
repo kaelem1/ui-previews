@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 设计流程 · 白板版</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f4f1ea;
+        --ink: #151515;
+        --muted: #4a4a4a;
+        --line: #e0d7c8;
+        --pink: #ff8fab;
+        --blue: #7cc7ff;
+        --green: #7be495;
+        --yellow: #ffe29a;
+        --shadow: 0 10px 30px rgba(28, 26, 24, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Noto Sans SC", system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 56px 24px 80px;
+      }
+
+      header {
+        display: grid;
+        gap: 10px;
+        max-width: 760px;
+      }
+
+      .title {
+        font-family: "Gloria Hallelujah", cursive;
+        font-size: clamp(30px, 5vw, 54px);
+        margin: 0;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      .board {
+        margin-top: 32px;
+        background: #fffef9;
+        border: 2px solid var(--line);
+        border-radius: 28px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+
+      .note {
+        border-radius: 18px;
+        padding: 16px;
+        min-height: 150px;
+        position: relative;
+        box-shadow: 0 8px 20px rgba(30, 30, 30, 0.12);
+      }
+
+      .note h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+      }
+
+      .note p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .note .num {
+        font-family: "Gloria Hallelujah", cursive;
+        font-size: 20px;
+        position: absolute;
+        top: -10px;
+        right: 12px;
+        color: rgba(0, 0, 0, 0.35);
+      }
+
+      .pink { background: var(--pink); }
+      .blue { background: var(--blue); }
+      .green { background: var(--green); }
+      .yellow { background: var(--yellow); }
+
+      .arrow {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .legend {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .legend span {
+        background: #fff;
+        border: 1px dashed var(--line);
+        padding: 6px 10px;
+        border-radius: 999px;
+      }
+
+      @media (max-width: 700px) {
+        .board {
+          padding: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1 class="title">设计师视角：AI 辅助的 4 张便签</h1>
+        <div class="subtitle">像白板讨论一样，把策略从“感觉”变成“结构化动作”。</div>
+      </header>
+
+      <section class="board">
+        <svg class="arrow" viewBox="0 0 1200 360" preserveAspectRatio="none">
+          <path d="M120 110 C 260 40, 360 40, 500 110" stroke="#c7bca6" stroke-width="3" fill="none" stroke-dasharray="8 8" />
+          <path d="M520 120 C 640 60, 760 60, 880 120" stroke="#c7bca6" stroke-width="3" fill="none" stroke-dasharray="8 8" />
+          <path d="M240 300 C 420 240, 600 240, 780 300" stroke="#c7bca6" stroke-width="3" fill="none" stroke-dasharray="8 8" />
+        </svg>
+
+        <div class="grid">
+          <article class="note pink">
+            <div class="num">01</div>
+            <h3>先给 AI 看“组件盒子”</h3>
+            <p>把组件库 + 设计规范丢进去，AI 才知道能用什么积木。</p>
+          </article>
+          <article class="note blue">
+            <div class="num">02</div>
+            <h3>先问清楚策略</h3>
+            <p>目标、优先级、重点板块先明确，避免先画后改。</p>
+          </article>
+          <article class="note green">
+            <div class="num">03</div>
+            <h3>多稿同时发散</h3>
+            <p>每稿都有设计主张，像多位设计师同时提案。</p>
+          </article>
+          <article class="note yellow">
+            <div class="num">04</div>
+            <h3>导出可编辑稿</h3>
+            <p>不是图片，而是可继续精修的结构化设计稿。</p>
+          </article>
+        </div>
+
+        <div class="legend">
+          <span>像设计评审：先策略、后版式</span>
+          <span>像工作坊：一眼能懂流程</span>
+          <span>像清单：新人可复用</span>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

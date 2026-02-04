@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 设计流程 · 流程图版</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0f1220;
+        --panel: #151a2b;
+        --ink: #f7f7fb;
+        --muted: #b3bdd4;
+        --accent: #7cf6c6;
+        --accent-2: #7aa5ff;
+        --stroke: #2a3450;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: radial-gradient(circle at 10% 10%, rgba(124, 246, 198, 0.1), transparent 40%),
+          radial-gradient(circle at 80% 20%, rgba(122, 165, 255, 0.12), transparent 45%),
+          var(--bg);
+        color: var(--ink);
+        font-family: "Noto Sans SC", system-ui, -apple-system, sans-serif;
+      }
+
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 56px 24px 80px;
+      }
+
+      header {
+        max-width: 780px;
+      }
+
+      h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(30px, 5vw, 54px);
+        margin: 0 0 12px;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .flow {
+        margin-top: 36px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 18px;
+        position: relative;
+      }
+
+      .step {
+        background: var(--panel);
+        border: 1px solid var(--stroke);
+        border-radius: 18px;
+        padding: 18px;
+        display: grid;
+        gap: 10px;
+        min-height: 180px;
+      }
+
+      .badge {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--accent);
+      }
+
+      .icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        background: rgba(124, 246, 198, 0.12);
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .step h3 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .step p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        left: 12%;
+        right: 12%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--accent-2), transparent);
+        opacity: 0.5;
+      }
+
+      @media (max-width: 900px) {
+        .arrow {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1>AI 辅助设计流程图</h1>
+        <div class="lead">把“策略”变成一个可走的流程，团队新人也能沿着路线走。</div>
+      </header>
+
+      <div class="flow">
+        <div class="arrow"></div>
+        <article class="step">
+          <div class="badge">Step 01</div>
+          <div class="icon">组件</div>
+          <h3>输入组件 + 规范</h3>
+          <p>把组件库/Token/规范整理成 AI 能理解的输入。</p>
+        </article>
+        <article class="step">
+          <div class="badge">Step 02</div>
+          <div class="icon">澄清</div>
+          <h3>策略澄清</h3>
+          <p>先问目标、优先级、重点板块，避免盲画。</p>
+        </article>
+        <article class="step">
+          <div class="badge">Step 03</div>
+          <div class="icon">多稿</div>
+          <h3>多方案生成</h3>
+          <p>每稿都有设计主张，便于比较与评审。</p>
+        </article>
+        <article class="step">
+          <div class="badge">Step 04</div>
+          <div class="icon">落地</div>
+          <h3>导出可编辑稿</h3>
+          <p>导出结构化稿件，继续精修并落地。</p>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

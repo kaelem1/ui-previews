@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 设计辅助 · 海报版</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #fef1e1;
+        --ink: #1a1a1a;
+        --accent: #ff4a3d;
+        --accent-2: #1f5cff;
+        --accent-3: #00b894;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Noto Sans SC", system-ui, -apple-system, sans-serif;
+        background: linear-gradient(120deg, #ffe1b6, #fef1e1 40%, #e9f5ff);
+        color: var(--ink);
+      }
+
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      .poster {
+        border: 6px solid var(--ink);
+        padding: 32px;
+        background: #fff7ec;
+        position: relative;
+      }
+
+      .title {
+        font-family: "Antonio", sans-serif;
+        font-size: clamp(38px, 7vw, 80px);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin: 0;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        margin: 12px 0 28px;
+        color: #333;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+      }
+
+      .block {
+        border: 2px solid var(--ink);
+        padding: 18px;
+        background: #fff;
+        position: relative;
+      }
+
+      .block::after {
+        content: "";
+        position: absolute;
+        inset: 8px;
+        border: 1px dashed rgba(0, 0, 0, 0.25);
+        pointer-events: none;
+      }
+
+      .block h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+
+      .block p {
+        margin: 0;
+        color: #444;
+        line-height: 1.5;
+      }
+
+      .badge {
+        position: absolute;
+        top: -12px;
+        right: 12px;
+        background: var(--accent);
+        color: #fff;
+        padding: 4px 10px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .footer {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 13px;
+      }
+
+      .pill {
+        border: 2px solid var(--ink);
+        padding: 6px 12px;
+        background: #fff;
+      }
+
+      .accent-1 { background: #fff0f0; }
+      .accent-2 { background: #eef3ff; }
+      .accent-3 { background: #e9fff6; }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <section class="poster">
+        <h1 class="title">AI Design
+          <span style="color: var(--accent-2)">Workflow</span>
+        </h1>
+        <div class="subtitle">把设计策略显性化，让新人也能“看得懂、做得稳”。</div>
+
+        <div class="grid">
+          <article class="block accent-1">
+            <div class="badge">原理 1</div>
+            <h3>组件先行</h3>
+            <p>把组件库和设计规范喂给 AI，定义“可用积木”。</p>
+          </article>
+          <article class="block accent-2">
+            <div class="badge">原理 2</div>
+            <h3>策略澄清</h3>
+            <p>先问目标/优先级/重点板块，再生成。</p>
+          </article>
+          <article class="block accent-3">
+            <div class="badge">原理 3</div>
+            <h3>多稿有主张</h3>
+            <p>每稿提前设置策略，方案可比较。</p>
+          </article>
+          <article class="block">
+            <div class="badge">原理 4</div>
+            <h3>结构化落地</h3>
+            <p>输出可编辑设计稿，不是一次性图片。</p>
+          </article>
+        </div>
+
+        <div class="footer">
+          <span class="pill">更少返工</span>
+          <span class="pill">策略可复用</span>
+          <span class="pill">新人更好上手</span>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
