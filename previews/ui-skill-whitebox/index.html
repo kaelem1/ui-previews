@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Skill 白盒说明</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0f1116;
+        --panel: #171b26;
+        --panel-2: #1f2433;
+        --ink: #f4f6fb;
+        --muted: #b6bccb;
+        --accent: #5eead4;
+        --accent-2: #ff9f1c;
+        --accent-3: #7c9cff;
+        --stroke: rgba(255, 255, 255, 0.08);
+        --shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at 15% 10%, rgba(124, 156, 255, 0.15), transparent 40%),
+          radial-gradient(circle at 80% 0%, rgba(94, 234, 212, 0.16), transparent 45%),
+          var(--bg);
+        color: var(--ink);
+      }
+
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 64px 24px 88px;
+      }
+
+      header {
+        display: grid;
+        gap: 14px;
+        max-width: 860px;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        font-size: 12px;
+        color: var(--accent);
+      }
+
+      h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(32px, 6vw, 58px);
+        margin: 0;
+      }
+
+      .lead {
+        font-size: 18px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .section {
+        margin-top: 36px;
+      }
+
+      .section h2 {
+        margin: 0 0 14px;
+        font-size: 20px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--stroke);
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 10px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: rgba(124, 156, 255, 0.16);
+        color: var(--accent-3);
+        width: fit-content;
+      }
+
+      .mono {
+        font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 12px;
+        background: rgba(0, 0, 0, 0.35);
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--stroke);
+        color: #cfe4ff;
+        overflow-x: auto;
+        white-space: pre-wrap;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+      }
+
+      .step {
+        background: var(--panel-2);
+        border: 1px dashed var(--stroke);
+        border-radius: 16px;
+        padding: 14px;
+      }
+
+      .step strong { color: var(--accent); }
+
+      .note {
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: rgba(255, 159, 28, 0.12);
+        color: #ffd5a6;
+        border: 1px dashed rgba(255, 159, 28, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="eyebrow">UI Skill Whitebox</div>
+        <h1>生成逻辑 · 数据流 · 影响因素 · 提示词 · 模型</h1>
+        <div class="lead">
+          这是当前 UI skill 的完整白盒说明（基于本地脚本与开源库）。不做魔法，只讲流程。
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>1. 生成逻辑（核心流程）</h2>
+        <div class="flow">
+          <div class="step"><strong>Step 1</strong> 读取输入（title / description / query）</div>
+          <div class="step"><strong>Step 2</strong> 调用 UI/UX Pro Max 的 search.py 生成设计系统</div>
+          <div class="step"><strong>Step 3</strong> 解析设计系统（颜色/字体/风格/模式）</div>
+          <div class="step"><strong>Step 4</strong> 用解析结果渲染 HTML 预览页</div>
+          <div class="step"><strong>Step 5</strong> 同步输出 design-system/MASTER.md</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>2. 数据流（从输入到页面）</h2>
+        <div class="card">
+          <div class="mono">generate_preview.js
+  └─> python3 search.py "<query>" --design-system --format markdown -p "<title>"
+      └─> design_system.py (规则引擎 + CSV 数据)
+          └─> 输出 Design System Markdown
+              └─> generate_preview.js 解析
+                  └─> 生成 index.html + design-system/MASTER.md</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>3. 影响“深层结果”的因素</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="pill">输入语义</div>
+            <div>query/title 决定产品类型与风格匹配（BM25 搜索 + 规则命中）。</div>
+          </article>
+          <article class="card">
+            <div class="pill">规则库</div>
+            <div>CSV 里的行业规则、风格优先级、反模式清单直接影响输出。</div>
+          </article>
+          <article class="card">
+            <div class="pill">检索域</div>
+            <div>style / color / typography / landing / product 五域组合决定推荐结构。</div>
+          </article>
+          <article class="card">
+            <div class="pill">模板层</div>
+            <div>HTML 模板决定呈现风格；目前仍是轻量模板，可升级为多模板。</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>4. 提示词 / 调用命令</h2>
+        <div class="card">
+          <div class="mono">python3 /Users/kaelem/dev/ui-ux-pro-max-skill/cli/assets/scripts/search.py \
+  "<query>" --design-system --format markdown --persist --output-dir <previewDir> -p "<title>"</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>5. 使用的“模型”</h2>
+        <div class="card">
+          <div>这条链路<strong>不依赖 LLM 模型</strong>。它是规则 + 搜索（BM25）+ CSV 数据库驱动的设计系统生成器。</div>
+          <div class="note">如果要引入 LLM（例如生成更复杂的页面结构），需要额外加一层模型调用。</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>6. 关键文件路径（可查）</h2>
+        <div class="card">
+          <div class="mono">/Users/kaelem/.openclaw/workspace/skills/public/ui-ux-design/scripts/generate_preview.js
+/Users/kaelem/dev/ui-ux-pro-max-skill/cli/assets/scripts/search.py
+/Users/kaelem/dev/ui-ux-pro-max-skill/cli/assets/scripts/design_system.py
+/Users/kaelem/dev/ui-ux-pro-max-skill/cli/assets/data/*.csv</div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
