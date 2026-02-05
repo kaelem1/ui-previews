@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Template header: Tailwind CDN + Shoelace + Anime.js -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;600&display=swap"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background: radial-gradient(circle at 20% 20%, #241156 0%, #09001f 45%, #010006 100%);
+        color: #f6f7ff;
+        font-family: 'Space Grotesk', sans-serif;
+        letter-spacing: 0.01em;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: linear-gradient(rgba(8, 8, 28, 0.7) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(8, 8, 28, 0.7) 1px, transparent 1px);
+        background-size: 32px 32px;
+        opacity: 0.35;
+        z-index: 0;
+        pointer-events: none;
+      }
+      main {
+        position: relative;
+        z-index: 1;
+      }
+      .pixel-title {
+        font-family: 'Press Start 2P', monospace;
+        font-size: clamp(1.5rem, 3vw, 2.8rem);
+        letter-spacing: 0.12em;
+      }
+      .spotlight-box {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 0 40px rgba(34, 211, 238, 0.2);
+      }
+      .pixel-image {
+        width: 100%;
+        image-rendering: pixelated;
+      }
+      .glass-card {
+        border: 1px solid rgba(59, 130, 246, 0.25);
+        background-image: linear-gradient(135deg, rgba(32, 212, 244, 0.15), rgba(255, 45, 251, 0.08));
+      }
+      .stats-grid > div {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      sl-card::part(base) {
+        background: rgba(5, 5, 20, 0.85);
+        border: 1px solid rgba(236, 72, 153, 0.3);
+        color: inherit;
+        backdrop-filter: blur(14px);
+      }
+      sl-button::part(base) {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-family: 'Press Start 2P', monospace;
+      }
+      sl-tag::part(base) {
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      sl-badge::part(base) {
+        background: rgba(16, 185, 129, 0.2);
+        border: 1px solid rgba(16, 185, 129, 0.4);
+        letter-spacing: 0.1em;
+      }
+      sl-progress-bar::part(base) {
+        background: rgba(255, 255, 255, 0.15);
+      }
+      sl-progress-bar::part(indicator) {
+        background: linear-gradient(90deg, #33ffee, #ff2dfb);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="max-w-6xl mx-auto px-6 py-12">
+      <div
+        class="rounded-3xl bg-gradient-to-br from-cyan-500/20 via-transparent to-fuchsia-500/20 p-6 md:p-10 spotlight-box glow"
+      >
+        <section class="grid gap-8 md:grid-cols-2 fade-in-up">
+          <div class="space-y-6">
+            <div
+              class="flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-white/50 section-title"
+            >
+              <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+              Pixel dossier
+            </div>
+            <span
+              class="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent pixel-title gradient-text block"
+            >
+              Nyabot-3000
+            </span>
+            <p class="text-sm text-white/70 max-w-xl">
+              Synth-infused alley cat streaming neon dreams into the skyline; expert at rewiring rooftop
+              antennas, remixing purrcore loops, and guarding 8-bit shrines.
+            </p>
+            <div class="flex items-center gap-4">
+              <sl-avatar
+                image="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxNiAxNicgc2hhcGUtcmVuZGVyaW5nPSdjcmlzcEVkZ2VzJz4KPHJlY3Qgd2lkdGg9JzE2JyBoZWlnaHQ9JzE2JyBmaWxsPScjMDYwMDE1Jy8+CjxyZWN0IHg9JzMnIHk9JzInIHdpZHRoPScyJyBoZWlnaHQ9JzMnIGZpbGw9JyNmZjdkZTcnLz4KPHJlY3QgeD0nMTEnIHk9JzInIHdpZHRoPScyJyBoZWlnaHQ9JzMnIGZpbGw9JyNmZjdkZTcnLz4KPHJlY3QgeD0nMicgeT0nNCcgd2lkdGg9JzEyJyBoZWlnaHQ9JzknIGZpbGw9JyNmZmQ0N2YnLz4KPHJlY3QgeD0nNCcgeT0nNicgd2lkdGg9JzInIGhlaWdodD0nMicgZmlsbD0nIzA5MGYzZCcvPgo8cmVjdCB4PScxMCcgeT0nNicgd2lkdGg9JzInIGhlaWdodD0nMicgZmlsbD0nIzA5MGYzZCcvPgo8cmVjdCB4PSc2JyB5PSc5JyB3aWR0aD0nNCcgaGVpZ2h0PScyJyBmaWxsPScjZjI2YjVlJy8+CjxyZWN0IHg9JzUnIHk9JzExJyB3aWR0aD0nNicgaGVpZ2h0PScyJyBmaWxsPScjZmY5ZGQxJy8+CjxyZWN0IHg9JzEnIHk9JzgnIHdpZHRoPScyJyBoZWlnaHQ9JzQnIGZpbGw9JyNmY2IwNjAnLz4KPHJlY3QgeD0nMTMnIHk9JzgnIHdpZHRoPScyJyBoZWlnaHQ9JzQnIGZpbGw9JyNmY2IwNjAnLz4KPHJlY3QgeD0nNCcgeT0nMTMnIHdpZHRoPSc4JyBoZWlnaHQ9JzEnIGZpbGw9JyM2NjJkZjcnLz4KPHJlY3QgeD0nMycgeT0nMTQnIHdpZHRoPScxMCcgaGVpZ2h0PScxJyBmaWxsPScjMmJlNGZmJy8+Cjwvc3ZnPg=="
+                label="Nyabot-3000"
+              ></sl-avatar>
+              <div class="space-y-1">
+                <sl-badge variant="success">Night Shift Online</sl-badge>
+                <sl-tag variant="primary">Neon Sentry</sl-tag>
+              </div>
+            </div>
+            <div class="backdrop-blur-md bg-white/10 rounded-2xl p-6 shadow-xl glass-card glow space-y-5">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="inline-flex items-center rounded-full border border-cyan-400/60 px-3 py-1 text-xs text-cyan-300 neon-pill"
+                  >8-bit empath</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border border-cyan-400/60 px-3 py-1 text-xs text-cyan-300 neon-pill"
+                  >laser whiskers</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border border-cyan-400/60 px-3 py-1 text-xs text-cyan-300 neon-pill"
+                  >retro guardian</span
+                >
+              </div>
+              <sl-progress-bar value="82"></sl-progress-bar>
+              <div class="space-y-3">
+                <div class="flex items-center justify-between rounded-xl bg-white/10 px-4 py-3 stat-row">
+                  <span class="text-sm text-white/60 uppercase tracking-[0.2em]">Laser focus</span>
+                  <span class="text-lg font-semibold text-white">92%</span>
+                </div>
+                <div class="flex items-center justify-between rounded-xl bg-white/10 px-4 py-3 stat-row">
+                  <span class="text-sm text-white/60 uppercase tracking-[0.2em]">Parkour loops</span>
+                  <span class="text-lg font-semibold text-white">64</span>
+                </div>
+                <div class="flex items-center justify-between rounded-xl bg-white/10 px-4 py-3 stat-row">
+                  <span class="text-sm text-white/60 uppercase tracking-[0.2em]">Nap/Noise ratio</span>
+                  <span class="text-lg font-semibold text-white">1 : 0.3</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <sl-button variant="primary" size="medium">Ping Familiar</sl-button>
+                <sl-button variant="default" size="medium">Drop Fish Token</sl-button>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="rounded-2xl border border-white/20 bg-white/5 p-3 image-frame glow">
+              <img
+                class="w-full rounded-xl pixel-image"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxNiAxNicgc2hhcGUtcmVuZGVyaW5nPSdjcmlzcEVkZ2VzJz4KPHJlY3Qgd2lkdGg9JzE2JyBoZWlnaHQ9JzE2JyBmaWxsPScjMDYwMDE1Jy8+CjxyZWN0IHg9JzMnIHk9JzInIHdpZHRoPScyJyBoZWlnaHQ9JzMnIGZpbGw9JyNmZjdkZTcnLz4KPHJlY3QgeD0nMTEnIHk9JzInIHdpZHRoPScyJyBoZWlnaHQ9JzMnIGZpbGw9JyNmZjdkZTcnLz4KPHJlY3QgeD0nMicgeT0nNCcgd2lkdGg9JzEyJyBoZWlnaHQ9JzknIGZpbGw9JyNmZmQ0N2YnLz4KPHJlY3QgeD0nNCcgeT0nNicgd2lkdGg9JzInIGhlaWdodD0nMicgZmlsbD0nIzA5MGYzZCcvPgo8cmVjdCB4PScxMCcgeT0nNicgd2lkdGg9JzInIGhlaWdodD0nMicgZmlsbD0nIzA5MGYzZCcvPgo8cmVjdCB4PSc2JyB5PSc5JyB3aWR0aD0nNCcgaGVpZ2h0PScyJyBmaWxsPScjZjI2YjVlJy8+CjxyZWN0IHg9JzUnIHk9JzExJyB3aWR0aD0nNicgaGVpZ2h0PScyJyBmaWxsPScjZmY5ZGQxJy8+CjxyZWN0IHg9JzEnIHk9JzgnIHdpZHRoPScyJyBoZWlnaHQ9JzQnIGZpbGw9JyNmY2IwNjAnLz4KPHJlY3QgeD0nMTMnIHk9JzgnIHdpZHRoPScyJyBoZWlnaHQ9JzQnIGZpbGw9JyNmY2IwNjAnLz4KPHJlY3QgeD0nNCcgeT0nMTMnIHdpZHRoPSc4JyBoZWlnaHQ9JzEnIGZpbGw9JyM2NjJkZjcnLz4KPHJlY3QgeD0nMycgeT0nMTQnIHdpZHRoPScxMCcgaGVpZ2h0PScxJyBmaWxsPScjMmJlNGZmJy8+Cjwvc3ZnPg=="
+                alt="Pixel art portrait of Nyabot-3000"
+              />
+            </div>
+            <div class="grid gap-4 sm:grid-cols-3 stats-grid">
+              <div class="rounded-xl bg-white/10 p-4 text-center space-y-1">
+                <p class="text-xs text-white/60 uppercase tracking-[0.3em]">Lives</p>
+                <p class="text-3xl font-semibold">7</p>
+              </div>
+              <div class="rounded-xl bg-white/10 p-4 text-center space-y-1">
+                <p class="text-xs text-white/60 uppercase tracking-[0.3em]">Fishbits</p>
+                <p class="text-3xl font-semibold">128</p>
+              </div>
+              <div class="rounded-xl bg-white/10 p-4 text-center space-y-1">
+                <p class="text-xs text-white/60 uppercase tracking-[0.3em]">BPM</p>
+                <p class="text-3xl font-semibold">122</p>
+              </div>
+            </div>
+            <sl-card class="glow fade-in-up">
+              <strong>Night Patrol Loop</strong>
+              <p class="mt-2 text-sm text-white/70">
+                Mapping neon alleys for stray glitch sprites and syncing rooftop beacons for dawn drops.
+              </p>
+              <div class="space-y-3 mt-4 list-rows">
+                <div class="rounded-xl bg-white/5 p-3 flex items-center justify-between">
+                  <span class="text-sm text-white/70">00:00 // Skyline sweep</span>
+                  <span class="text-xs text-cyan-300">Clear</span>
+                </div>
+                <div class="rounded-xl bg-white/5 p-3 flex items-center justify-between">
+                  <span class="text-sm text-white/70">02:00 // Neon nap node</span>
+                  <span class="text-xs text-cyan-300">Recharging</span>
+                </div>
+                <div class="rounded-xl bg-white/5 p-3 flex items-center justify-between">
+                  <span class="text-sm text-white/70">04:00 // Synth purrcast</span>
+                  <span class="text-xs text-cyan-300">Broadcast</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-4 chip-group">
+                <div class="flex flex-wrap gap-2">
+                  <span class="rounded-full border px-3 py-1 text-xs">Stealth</span>
+                  <span class="rounded-full border px-3 py-1 text-xs">Balance</span>
+                  <span class="rounded-full border px-3 py-1 text-xs">Holo-mapping</span>
+                </div>
+              </div>
+              <sl-button slot="footer" variant="primary">Queue Mission</sl-button>
+            </sl-card>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        anime({
+          targets: '.fade-in-up',
+          opacity: [0, 1],
+          translateY: [20, 0],
+          duration: 600,
+          easing: 'easeOutQuad'
+        });
+
+        anime({
+          targets: '.glow',
+          boxShadow: ['0 0 0 rgba(34,211,238,0.0)', '0 0 20px rgba(34,211,238,0.4)'],
+          direction: 'alternate',
+          loop: true,
+          easing: 'easeInOutSine'
+        });
+      });
+    </script>
+  </body>
+</html>
