@@ -18,11 +18,17 @@
         font-family: "Press Start 2P", "VT323", monospace;
       }
       body {
-        background: radial-gradient(circle at top, #121946, #05010d 70%);
-        color: #f1f4ff;
+        background: radial-gradient(circle at top, #0b1233, #03010a 70%);
+        color: #f7f9ff;
         min-height: 100vh;
         padding: 40px;
+        font-size: 15px;
+        line-height: 1.6;
       }
+      .text-slate-200 { color: #f3f5ff !important; }
+      .text-slate-300 { color: #e8ebff !important; }
+      .text-white\/70 { color: #f4f6ff !important; }
+      .text-white\/60 { color: #e2e7ff !important; }
       .crt-grid {
         background-image: linear-gradient(#ffffff10 1px, transparent 1px),
           linear-gradient(90deg, #ffffff10 1px, transparent 1px);
@@ -99,7 +105,7 @@
           <div class="space-y-4">
             <sl-tag size="large" pill variant="primary">Retro Neon Briefing</sl-tag>
             <h2 class="text-xl text-cyan-200">LLM供应商面向开发者</h2>
-            <p class="text-sm leading-relaxed text-slate-200">
+            <p class="text-sm leading-relaxed text-slate-200 bg-white/5 p-3 rounded-xl">
               插上像素霓虹翅膀的模型运营控制台。Kaelem 的供应矩阵把多家 LLM 接入策略拆成芯片级模块，开发者只需声明式配置即可得到实时竞价、回退、混合提示和性能遥测。
             </p>
             <sl-divider></sl-divider>
