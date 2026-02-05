@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kaelem Retro Nexus</title>
+    <!-- Template header: Tailwind CDN + Shoelace + Anime.js -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <style>
+      :root {
+        font-family: "Press Start 2P", "VT323", monospace;
+      }
+      body {
+        background: radial-gradient(circle at top, #121946, #05010d 70%);
+        color: #f1f4ff;
+        min-height: 100vh;
+        padding: 40px;
+      }
+      .crt-grid {
+        background-image: linear-gradient(#ffffff10 1px, transparent 1px),
+          linear-gradient(90deg, #ffffff10 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      .fade-in-up {
+        animation: fadeInUp 0.9s ease forwards;
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .glow-pulse {
+        box-shadow: 0 0 15px #33fcef, inset 0 0 10px #33fcef55;
+        animation: glowPulse 2s ease-in-out infinite;
+      }
+      @keyframes glowPulse {
+        0% {
+          box-shadow: 0 0 8px #33fcef, inset 0 0 4px #33fcef55;
+        }
+        50% {
+          box-shadow: 0 0 24px #33fcef, inset 0 0 14px #33fcef99;
+        }
+        100% {
+          box-shadow: 0 0 8px #33fcef, inset 0 0 4px #33fcef55;
+        }
+      }
+      .pixel-border {
+        border: 4px solid #8a4dff;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+      }
+      .image-placeholder {
+        border: 3px dashed #ff8df7;
+        min-height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ff8df7;
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body class="crt-grid">
+    <main class="max-w-5xl mx-auto space-y-10">
+      <sl-card class="fade-in-up glow-pulse" style="background:#0b0f2a;">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div class="flex items-center gap-4">
+            <sl-avatar image="https://via.placeholder.com/80" label="Kaelem"></sl-avatar>
+            <div>
+              <p class="text-sm text-cyan-300">速度</p>
+              <h1 class="text-2xl text-pink-300">Kaelem · LLM供应商面向开发者</h1>
+              <sl-badge pill variant="success">Neon Ready</sl-badge>
+            </div>
+          </div>
+          <sl-tooltip content="Spin up Kaelem CLI">
+            <sl-button size="large" variant="primary">
+              <sl-icon slot="prefix" name="cpu"></sl-icon>
+              Launch Stack
+            </sl-button>
+          </sl-tooltip>
+        </div>
+      </sl-card>
+
+      <sl-card class="fade-in-up pixel-border" style="background:#120c2d;">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-4">
+            <sl-tag size="large" pill variant="primary">Retro Neon Briefing</sl-tag>
+            <h2 class="text-xl text-cyan-200">LLM供应商面向开发者</h2>
+            <p class="text-sm leading-relaxed text-slate-200">
+              插上像素霓虹翅膀的模型运营控制台。Kaelem 的供应矩阵把多家 LLM 接入策略拆成芯片级模块，开发者只需声明式配置即可得到实时竞价、回退、混合提示和性能遥测。
+            </p>
+            <sl-divider></sl-divider>
+            <div class="space-y-2">
+              <label class="text-xs tracking-wider text-pink-200">Latency Harmonizer</label>
+              <sl-progress-bar value="72" class="glow-pulse"></sl-progress-bar>
+            </div>
+            <sl-switch checked>Auto-Failover Matrix</sl-switch>
+          </div>
+          <div class="space-y-4">
+            <div class="image-placeholder fade-in-up">像素示意图占位符</div>
+            <sl-card class="pixel-border" style="background:#1b1244;">
+              <p class="text-xs text-slate-300 mb-2">Kaelem .retro config</p>
+              <code class="text-[10px] text-lime-200 block">
+                provider: "VelocityGrid"<br />
+                routing: ["context-fuse","price-guard"]<br />
+                locale: "zh-CN"<br />
+                extras: ["prompt-lint","telemetry-hud"]
+              </code>
+            </sl-card>
+          </div>
+        </div>
+      </sl-card>
+
+      <sl-card class="fade-in-up" style="background:#0d1028;">
+        <sl-tag variant="success" pill>Stats</sl-tag>
+        <h3 class="text-lg text-cyan-100 mb-6">Kaelem Metric Overlay</h3>
+        <div class="stats-grid text-center">
+          <sl-card style="background:#1c1842;">
+            <p class="text-xs text-pink-200">实时吞吐</p>
+            <p class="text-2xl text-white">83K</p>
+            <sl-badge variant="primary" pill>req/s</sl-badge>
+          </sl-card>
+          <sl-card style="background:#1c1842;">
+            <p class="text-xs text-pink-200">模型拼接</p>
+            <p class="text-2xl text-white">18</p>
+            <sl-badge variant="info" pill>providers</sl-badge>
+          </sl-card>
+          <sl-card style="background:#1c1842;">
+            <p class="text-xs text-pink-200">提示命中</p>
+            <p class="text-2xl text-white">97%</p>
+            <sl-badge variant="success" pill>accuracy</sl-badge>
+          </sl-card>
+          <sl-card style="background:#1c1842;">
+            <p class="text-xs text-pink-200">成本下降</p>
+            <p class="text-2xl text-white">42%</p>
+            <sl-badge variant="warning" pill>since launch</sl-badge>
+          </sl-card>
+        </div>
+      </sl-card>
+
+      <sl-card class="fade-in-up pixel-border" style="background:#140f33;">
+        <div class="flex flex-wrap gap-4 items-center">
+          <sl-icon name="terminal"></sl-icon>
+          <p class="text-sm text-slate-200 flex-1">
+            一次性把所有厂商接通在一个像素风管控台里：兼容多模型上下文、故障注入、数据主权区域化。
+          </p>
+          <sl-button variant="text">
+            Docs Port
+            <sl-icon slot="suffix" name="arrow-right"></sl-icon>
+          </sl-button>
+        </div>
+      </sl-card>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        anime({
+          targets: ".fade-in-up",
+          translateY: [24, 0],
+          opacity: [0, 1],
+          easing: "easeOutQuad",
+          duration: 800,
+          delay: anime.stagger(150)
+        });
+      });
+    </script>
+  </body>
+</html>
