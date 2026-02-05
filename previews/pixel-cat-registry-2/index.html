@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixella Profile</title>
+  <!-- Template header: Tailwind CDN + Shoelace + Anime.js -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+  />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <style>
+    body {
+      font-family: "Press Start 2P", system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#0c0f1a] text-white">
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <section class="grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
+      <div class="space-y-6">
+        <div class="fade-in-up inline-flex items-center gap-2 rounded-full border border-cyan-400/60 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.3em] text-cyan-300">
+          <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+          Pixel Archive
+        </div>
+        <h1 class="fade-in-up text-3xl font-bold">
+          <span class="bg-gradient-to-r from-fuchsia-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent">Pixella</span>
+          // Neon Alley Familiar
+        </h1>
+        <p class="fade-in-up text-sm leading-relaxed text-white/70">
+          Pixella patrols the neon alleyways in a 32×32 grid, glitched with luminous whiskers and a synth scarf that pulses with the city's arcade beats.
+        </p>
+        <div class="fade-in-up flex flex-wrap gap-2">
+          <span class="inline-flex items-center rounded-full border border-cyan-400/60 px-3 py-1 text-xs text-cyan-300">Stealth Unit</span>
+          <span class="inline-flex items-center rounded-full border border-cyan-400/60 px-3 py-1 text-xs text-cyan-300">Byte Hunter</span>
+          <span class="inline-flex items-center rounded-full border border-cyan-400/60 px-3 py-1 text-xs text-cyan-300">Neon Guardian</span>
+        </div>
+        <sl-card class="fade-in-up bg-white/5 text-white">
+          <img slot="image" src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=1200&q=80" alt="Pixel cat" />
+          <strong>Identity Snapshot</strong>
+          <p>Glitched scarf, neon whiskers, and pixel-perfect reflex loops.</p>
+        </sl-card>
+        <div class="fade-in-up flex items-center gap-3">
+          <sl-avatar image="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=200&q=80" label="Pixella"></sl-avatar>
+          <div>
+            <p class="text-xs uppercase tracking-[0.3em] text-white/50">Companion</p>
+            <p class="text-sm">Arcade Cat A-07</p>
+          </div>
+        </div>
+        <sl-button class="glow" variant="primary">Summon Pixella</sl-button>
+      </div>
+
+      <div class="space-y-6">
+        <div class="fade-in-up rounded-2xl border border-white/10 bg-white/5 p-4">
+          <img class="w-full rounded-xl" src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=1200&q=80" alt="Pixel cat portrait" />
+        </div>
+        <div class="fade-in-up space-y-3">
+          <div class="flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-white/50">
+            <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+            Vital Stats
+          </div>
+          <div class="grid gap-4 sm:grid-cols-3">
+            <div class="rounded-xl bg-white/10 p-4 text-center">
+              <p class="text-xs uppercase text-white/60">Pixel Hearts</p>
+              <p class="mt-2 text-2xl font-semibold text-cyan-300">8 / 8</p>
+            </div>
+            <div class="rounded-xl bg-white/10 p-4 text-center">
+              <p class="text-xs uppercase text-white/60">Night Patrols</p>
+              <p class="mt-2 text-2xl font-semibold text-fuchsia-300">47</p>
+            </div>
+            <div class="rounded-xl bg-white/10 p-4 text-center">
+              <p class="text-xs uppercase text-white/60">Byte Treats</p>
+              <p class="mt-2 text-2xl font-semibold text-amber-200">12</p>
+            </div>
+            <div class="rounded-xl bg-white/10 p-4 text-center">
+              <p class="text-xs uppercase text-white/60">Glitch Shield</p>
+              <p class="mt-2 text-2xl font-semibold text-emerald-200">92%</p>
+            </div>
+            <div class="rounded-xl bg-white/10 p-4 text-center">
+              <p class="text-xs uppercase text-white/60">Holo-Friends</p>
+              <p class="mt-2 text-2xl font-semibold text-blue-200">23</p>
+            </div>
+            <div class="rounded-xl bg-white/10 p-4 text-center">
+              <p class="text-xs uppercase text-white/60">Mixtapes</p>
+              <p class="mt-2 text-2xl font-semibold text-rose-200">5</p>
+            </div>
+          </div>
+        </div>
+        <div class="fade-in-up space-y-3">
+          <div class="flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-white/50">
+            <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+            Status Matrix
+          </div>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3">
+              <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+              <span>Night Vision Sync</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+              <span>Arcade Signal Clean</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+              <span>Neon Alley Map Loaded</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      anime({
+        targets: ".fade-in-up",
+        opacity: [0, 1],
+        translateY: [40, 0],
+        delay: anime.stagger(120),
+        easing: "easeOutQuad"
+      });
+
+      anime({
+        targets: ".glow",
+        boxShadow: ["0 0 0 rgba(34,211,238,0.0)", "0 0 20px rgba(34,211,238,0.45)"],
+        direction: "alternate",
+        loop: true,
+        easing: "easeInOutSine"
+      });
+    });
+  </script>
+</body>
+</html>
