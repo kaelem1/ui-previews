@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "title": "Pixel-Art Cat Profile",
+    "description": "Report on the Neon Alley pixel feline avatar, covering stats, story, and action plan.",
+    "pageType": "report",
+    "role": "layout-generator",
+    "intent": "deliver-structured-ui"
+  },
+  "layout": [
+    {
+      "type": "hero",
+      "title": "Pixella Spotlight",
+      "subtitle": "Neon Alley pixel familiar",
+      "role": "overview",
+      "intent": "introduce-avatar",
+      "styleHint": "vibrant-retro",
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Identity Snapshot",
+          "desc": "Pixella is a cyan-tabby rendered on a 32×32 grid, sporting a glitchy scarf and bioluminescent whiskers that pulse with player mood signals.",
+          "role": "summary",
+          "intent": "present-essentials"
+        }
+      ]
+    },
+    {
+      "type": "stats",
+      "title": "Vital Statistics",
+      "role": "analytics",
+      "intent": "quantify-avatar",
+      "blocks": [
+        {
+          "kind": "stats",
+          "title": "Core Metrics",
+          "desc": "Key performance indicators collected from the Neon Alley social hub and quest logs.",
+          "role": "metrics",
+          "intent": "show-performance",
+          "items": [
+            {
+              "label": "Pixel Density",
+              "value": "32×32",
+              "note": "Retro-friendly resolution"
+            },
+            {
+              "label": "Palette Count",
+              "value": "12 swatches",
+              "note": "Cyan, magenta, firefly yellow dominate"
+            },
+            {
+              "label": "Followers",
+              "value": "82,140",
+              "note": "Neon Alley global board"
+            },
+            {
+              "label": "Quest Success Rate",
+              "value": "93%",
+              "note": "Self-reported mission log past 12 months"
+            },
+            {
+              "label": "Glitch Energy",
+              "value": "74/100",
+              "note": "Determines scarf luminance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Scope of Review",
+      "role": "reporting",
+      "intent": "define-boundaries",
+      "blocks": [
+        {
+          "kind": "rich-text",
+          "title": "Review Lens",
+          "desc": "Assessment covers avatar artistry, social resonance, quest reliability, and readiness for marketplace spotlighting.",
+          "role": "context",
+          "intent": "set-expectations",
+          "items": [
+            {
+              "label": "Timeframe",
+              "value": "2019 mint to Feb 2026 live ops"
+            },
+            {
+              "label": "Data Sources",
+              "value": "Sprite atlas, quest telemetry, Alley chat transcripts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "grid",
+      "title": "Findings Matrix",
+      "role": "analysis",
+      "intent": "highlight-insights",
+      "blocks": [
+        {
+          "kind": "grid",
+          "title": "Notable Observations",
+          "desc": "Verified insights derived from art audit and community interviews.",
+          "role": "insight",
+          "intent": "report-findings",
+          "items": [
+            {
+              "label": "Visual Consistency",
+              "value": "Scarf animation stays on-model across 96% of frames",
+              "note": "Minor jitter only on frame 18 idle loop"
+            },
+            {
+              "label": "Community Hook",
+              "value": "Cyan whisker pulses correlate with chat spikes +18%",
+              "note": "Best-in-class retention beacon"
+            },
+            {
+              "label": "Lore Coherence",
+              "value": "Timeline aligns with Alley Episode 4 canon",
+              "note": "No retcon risk detected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "title": "Evidence Gallery",
+      "role": "documentation",
+      "intent": "show-proof",
+      "blocks": [
+        {
+          "kind": "media",
+          "title": "Sprite Proofs",
+          "desc": "Key frames supporting authenticity claims.",
+          "role": "evidence",
+          "intent": "visualize-backup",
+          "items": [
+            {
+              "label": "Idle Loop Frame 12",
+              "value": "Shows scarf flare peak",
+              "note": "Matches telemetry spike"
+            },
+            {
+              "label": "Quest Badge Overlay",
+              "value": "Layered pixel-perfect at 2px stroke",
+              "note": "Validates UI fit"
+            }
+          ],
+          "media": {
+            "type": "sprite-sheet",
+            "src": "ipfs://pixel-cat/gallery-sheet.png",
+            "alt": "Composite of Pixella frames and badges"
+          }
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "title": "Origin Timeline",
+      "role": "storytelling",
+      "intent": "map-history",
+      "blocks": [
+        {
+          "kind": "timeline",
+          "title": "Life Events",
+          "desc": "Narrative beats showing evolution of the avatar.",
+          "role": "chronicle",
+          "intent": "sequence-milestones",
+          "items": [
+            {
+              "label": "2019 Mint",
+              "value": "Released during Neon Alley Genesis drop",
+              "note": "Edition #118/300"
+            },
+            {
+              "label": "2021 Upgrade",
+              "value": "Scarf glitch shader patched",
+              "note": "+12% engagement"
+            },
+            {
+              "label": "2024 Alley Run",
+              "value": "Headlined Retro Relay event",
+              "note": "Unlocked neon whiskers"
+            },
+            {
+              "label": "2025 Community Vote",
+              "value": "Fans selected cyan eye tint",
+              "note": "3.2k ballots"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "title": "Pixella vs Alley Baseline",
+      "role": "evaluation",
+      "intent": "contrast-strengths",
+      "blocks": [
+        {
+          "kind": "compare",
+          "title": "Trait Comparison",
+          "desc": "Shows how Pixella differentiates from a standard Alley cat avatar.",
+          "role": "benchmark",
+          "intent": "surface-differentiators",
+          "items": [
+            {
+              "label": "Palette Vibrancy",
+              "value": "Pixella: ultra-neon CMY mix",
+              "note": "Baseline: muted dusk tones"
+            },
+            {
+              "label": "Interaction Hooks",
+              "value": "Pixella: reactive whisker pulses",
+              "note": "Baseline: static idle"
+            },
+            {
+              "label": "Lore Integration",
+              "value": "Pixella: canon quests + narrative logs",
+              "note": "Baseline: optional side quests"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Next Steps",
+      "role": "planning",
+      "intent": "drive-action",
+      "blocks": [
+        {
+          "kind": "checklist",
+          "title": "Action Plan",
+          "desc": "Concrete moves to elevate Pixella ahead of marketplace relaunch.",
+          "role": "roadmap",
+          "intent": "outline-actions",
+          "items": [
+            {
+              "label": "Polish Animation",
+              "value": "Stabilize idle frame 18 jitter",
+              "note": "Allocate 4 hrs shader pass"
+            },
+            {
+              "label": "Community Drop",
+              "value": "Release cyan pulse emoji pack",
+              "note": "Sync with Alley newsletter"
+            },
+            {
+              "label": "Marketplace Prep",
+              "value": "Package lore dossier + sprite sheet",
+              "note": "Due before Q2 feature row"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
