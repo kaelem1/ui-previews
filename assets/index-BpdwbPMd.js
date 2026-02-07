@@ -27,6 +27,13 @@
         <p>Non-sensitive tasks and updates.</p>
         <a class="card-link" href="/ui-previews/previews/assistant-notes/index.html">Open</a>
       </article>
+
+      <article class="card">
+        <div class="meta">Preview</div>
+        <h2>Signal Grove</h2>
+        <p>Calm focus app that turns your day into a clear, manageable rhythm.</p>
+        <a class="card-link" href="/ui-previews/previews/signal-grove/index.html">Open</a>
+      </article>
     </section>
 
     <section class="grid">
@@ -79,6 +86,13 @@
         <h2>Assistant Notes</h2>
         <p>Non-sensitive tasks and updates.</p>
         <a class="card-link" href="/ui-previews/previews/assistant-notes/index.html">Open</a>
+      </article>
+
+      <article class="card">
+        <div class="meta">Preview</div>
+        <h2>Signal Grove</h2>
+        <p>Calm focus app that turns your day into a clear, manageable rhythm.</p>
+        <a class="card-link" href="/ui-previews/previews/signal-grove/index.html">Open</a>
       </article>
     </section>
   </main>
